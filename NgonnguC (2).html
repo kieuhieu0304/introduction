@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code with Me</title>
+    <style>
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    z-index: 1000;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.logo h1 {
+}
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+.menu a:hover {
+    color: #007BFF;
+}
+.menu button {
+    font-size: 16px;
+    padding: 5px 15px;
+    color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.menu button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+.login {
+    color: white !important;
+    font-size: 12cm;
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #f44336;
+    text-align: center;
+    border-radius: 5px;
+}
+.login:hover {
+    background-color: #2683e8;
+}
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .course-main {
+            background-color: #0e2a47;
+            color: white;
+            border-radius: 10px;
+            padding: 40px;
+            flex: 2;
+            position: relative;
+        }
+        
+        .course-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .course-description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .author-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .student-count {
+            margin-left: 10px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+        
+        .course-image {
+            margin: 10px;
+            text-align: center;
+            width: 95%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.646);
+        }
+.course-sidebar {
+    background-color:#2d4763;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    color: white; 
+}
+.price {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+.original-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 18px;
+        }
+        
+.discount {
+            background-color: #ffeaea;
+            color: #e74c3c;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+.sidebar-title {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+        
+.course-stats {
+            margin-bottom: 20px;
+        }
+        
+.stat-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+.stat-icon {
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+.action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 30px;
+        }
+.btn-try {
+            background-color: #4c6ef5;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+}
+.btn-buy {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+}
+h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.course-1{
+    padding: 20px;
+    
+}
+.boder-bottom{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+.ingredients ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+.ingredients li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+        
+.ingredients li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        .section {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.course-header {
+        padding: 10px;
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .course-info {
+        padding: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .expand-all {
+        color: #7B1FA2;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .section {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    .section-header {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+        cursor: pointer;
+    }
+    .section-title {
+        display: flex;
+        align-items: center;
+    }
+    .section-icon {
+        margin-right: 10px;
+        transition: transform 0.3s;
+    }
+    .rotate {
+        transform: rotate(90deg);
+    }
+    .section-content {
+        background-color: white;
+        border-top: 1px solid #e0e0e0;
+        display: none;
+    }
+    .lecture {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .lecture:last-child {
+        border-bottom: none;
+    }
+    .lecture-title {
+        display: flex;
+        align-items: center;
+    }
+    .lecture-icon {
+        margin-right: 10px;
+    }
+    .preview-link {
+        margin-right: 20px;
+        color: #7B1FA2;
+        text-decoration: none;
+    }
+    .purple-link {
+        text-decoration: none;
+        color: #7B1FA2;
+    }
+    
+    h4 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" width="80" height="80">
+                <h1>CodeWithMe</h1>
+            </div>
+            <div class="menu">
+                <a>Trang chủ</a>
+                <a href="#">Người đóng góp</a>
+                <a href="#">Giỏ hàng</a>
+                <button type="submit">Đăng nhập</button>
+                <div>
+                    <a href="#" class="login">Đăng ký</a>
+                </div>
+    
+    
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="course-main">
+            <h1 class="course-title">Lập trình C cơ bản</h1>
+            <p class="course-description">
+                Khóa học cung cấp nền tảng vững chắc về C cho người mới bắt đầu,
+                giúp họ phát triển kỹ năng lập trình cơ bản và áp dụng vào các dự án
+                thực tế.
+            </p>
+            <div class="tags">
+                <span class="tag">cpp</span>
+                <span class="tag">basic</span>
+                <span class="tag">programming</span>
+            </div>
+            <div class="author-info">
+                <div class="author">
+                    <span>Tác giả CodeWithMe</span>
+                    <span class="student-count">453 Học viên</span>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                    <span>5</span>
+                </div>
+            </div>
+            <img src="https://d3hi6wehcrq5by.cloudfront.net/itnavi-blog/2020/06/Ng%C3%B4n-ng%E1%BB%AF-l%E1%BA%ADp-tr%C3%ACnh-C-5.jpg" alt="C Course" class="course-image">
+        </div>
+    <div class="course-sidebar">
+        <div class="price">499.000đ <span class="discount">-31%</span></div>
+            <div class="original-price">728.000 đ</div>
+
+            <h3 class="sidebar-title">Thông tin khóa học</h3>
+            <div class="course-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">⏱️</span>
+                    <span>30 giờ học</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📝</span>
+                    <span>40 bài đọc</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🎥</span>
+                    <span>29 video</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📄</span>
+                    <span>2 tài liệu tham khảo</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">📝</span>
+                    <span>9 bài tập</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">✅</span>
+                    <span>11 bài kiểm tra</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">💻</span>
+                    <span>34 bài lập trình</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🔄</span>
+                    <span>Truy cập trọn đời</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🏆</span>
+                    <span>Chứng chỉ khi hoàn thành 80% khóa học</span>
+                </div>
+
+            </div>
+            <div class="action-buttons">
+                <div class="btn-try">Học thử</div>
+                <div class="btn-buy">Mua ngay</div>
+            </div>
+        </div>        
+    </div>
+    <div class="course-1">
+        <h1>C Giới thiệu</h1>
+        <div class="boder-bottom"></div>
+        <h2>C là gì?</h2>
+        <p>C là ngôn ngữ lập trình đa năng được Dennis Ritchie tạo ra tại Phòng thí nghiệm Bell vào năm 1972.</p>
+        <p>Đây là một ngôn ngữ rất phổ biến, mặc dù đã cũ. Lý do chính cho sự phổ biến của nó là vì nó là ngôn ngữ cơ bản trong lĩnh vực khoa học máy tính.</p>
+        <p>C có liên quan chặt chẽ với UNIX vì nó được phát triển để viết hệ điều hành UNIX.</p>
+        <div class="boder-bottom"></div>
+        <h2>Tại sao nên học C?</h2>
+        <div class="ingredients">
+            <ul>
+                <li>Đây là một trong những ngôn ngữ lập trình phổ biến nhất trên thế giới</li>
+                <li>Nếu bạn biết C, bạn sẽ không gặp vấn đề gì khi học các ngôn ngữ lập trình phổ biến khác như Java, Python, C++, C#, v.v. vì cú pháp tương tự nhau</li>
+                <li>C rất nhanh so với các ngôn ngữ lập trình khác như Java và Python</li>
+                <li>C rất linh hoạt; nó có thể được sử dụng trong cả ứng dụng và công nghệ</li>
+            </ul>
+        </div>
+        <div class="boder-bottom"></div>
+        <h2>Sự khác biệt giữa C và C++</h2>
+        <div class="ingredients">
+            <ul>
+                <li>C++ được phát triển như một phần mở rộng của C và cả hai ngôn ngữ đều có cú pháp gần như giống nhau</li>
+                <li>Sự khác biệt chính giữa C và C++ là C++ hỗ trợ lớp và đối tượng, trong khi C thì không</li>
+            </ul>
+        </div>
+    </div>
+    <h1 class="course-header">Nội dung khóa học</h1>
+
+<div class="course-info">
+    <a href="#" class="expand-all" id="expandAllBtn">Mở rộng tất cả các phần</a>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>Giới thiệu tổng quan</h4>
+        </div>
+        
+    </div>
+    
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href="#" class="purple-link">C bắt đầu</a>
+            </div>
+            <div>
+                <a href="#" class="preview-link">Xem trước</a>
+            </div>
+        </div>
+        
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href="#" class="purple-link">Cú pháp C</a>
+            </div>
+            <div>
+                <a href="#" class="preview-link">Xem trước</a>
+                
+            </div>
+        </div>
+        
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Đầu ra C</a>
+            </div>
+            
+        </div>
+        
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C bình luận</a>
+            </div>
+            
+        </div>
+        
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Biến C</a>
+            </div>
+            
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Kiểu dữ liệu C</a>
+            </div>
+            
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Hằng số C</a>
+            </div>
+        </div>  
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Toán tử C</a>
+            </div>
+        </div> 
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C boolean</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C nếu...nếu không</a>
+            </div>
+        </div> 
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Công tắc C</a>
+            </div>
+        </div>  
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">vòng lặp while</a>
+            </div>
+        </div> 
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">vòng lặp C</a>
+            </div>
+        </div> 
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C nghỉ/tiếp tục</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Mảng C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Đầu vào C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Địa chỉ C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">con trỏ C</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>Các hàm C</h4>
+        </div>
+        
+    </div>
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Các hàm C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">vTham số hàm C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Phạm vi C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C Đệ quy</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Khai báo hàm C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Các hàm toán học C</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>Tập tin C</h4>
+        </div>
+        
+    </div>
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C Tạo tập tin</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C Ghi vào tập tin</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">vC đọc tập tin</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>Cấu trúc C</h4>
+        </div>
+        
+    </div>
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Cấu trúc C</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>Bộ nhớ C</h4>
+        </div>
+        
+    </div>
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Bộ nhớ C</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>C Tham khảo</h4>
+        </div>
+       
+    </div>
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C Tham khảo</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Từ khóa C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link"> stdio.h</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">stdib.h</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Chuỗi.h</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">math.h</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">ctype.h</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-title">
+            <span class="section-icon">▶</span>
+            <h4>C Ví dụ</h4>
+        </div>
+        
+    </div>
+    <div class="section-content">
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">C Ví dụ</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Bài tập C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Câu đố C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Trình biên dịch C</a>
+            </div>
+        </div>
+        <div class="lecture">
+            <div class="lecture-title">
+                <span class="lecture-icon">▶</span>
+                <a href ="#" class="purple-link">Giáo trình C</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleSection(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.section-icon');
+        
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+            icon.classList.remove('rotate');
+            icon.textContent = '▶';
+        } else {
+            content.style.display = 'block';
+            icon.classList.add('rotate');
+            icon.textContent = '▼';
+        }
+    }
+    
+    document.getElementById('expandAllBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const allSections = document.querySelectorAll('.section-content');
+        const allIcons = document.querySelectorAll('.section-icon');
+        const expandBtn = document.getElementById('expandAllBtn');
+        
+        
+        let allExpanded = true;
+        for (const section of allSections) {
+            if (section.style.display !== 'block') {
+                allExpanded = false;
+                break;
+            }
+        }
+        
+        if (allExpanded) {
+        
+            for (let i = 0; i < allSections.length; i++) {
+                allSections[i].style.display = 'none';
+                allIcons[i].classList.remove('rotate');
+                allIcons[i].textContent = '▶';
+            }
+            expandBtn.textContent = 'Mở rộng tất cả các phần';
+        } else {
+            
+            for (let i = 0; i < allSections.length; i++) {
+                allSections[i].style.display = 'block';
+                allIcons[i].classList.add('rotate');
+                allIcons[i].textContent = '▼';
+            }
+            expandBtn.textContent = 'Thu gọn tất cả các phần';
+        }
+    });
+    
+    
+    window.onload = function() {
+        const firstSection = document.querySelector('.section-header');
+        toggleSection(firstSection);
+    };
+ </script>
+
+    <footer>
+        <p>&copy; 2025 CodeWithMe. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
