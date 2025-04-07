@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="dkdn.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Đăng Ký</h1>
+        <form id="register">
+            <label for="regUsername">Tên đăng ký :</label>
+            <input type="text" id="regUsername" name="regUsername" placeholder="Nhập tên đăng ký" required>
+
+            <label for="regPassword">Mật khẩu:</label>
+            <input type="password" id="regPassword" name="regPassword" placeholder="Nhập mật khẩu" required>
+
+            <label for="confirmPassword">Xác nhận mật khẩu:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+
+            <div class="wrap">
+                <button type="submit">Đăng Ký</button>
+            </div>
+        </form>
+        <p>Đã có tài khoản? <a href="đăng nhập.html">Đăng nhập ngay</a></p>
+    </div>
+
+    <script>
+        document.getElementById("register").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let username = document.getElementById("regUsername").value.trim();
+            let password = document.getElementById("regPassword").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            if (!username || !password || !confirmPassword) {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            if (password !== confirmPassword) {
+                alert("Mật khẩu xác nhận không khớp!");
+                return;
+            }
+
+            let storedUser = localStorage.getItem("registeredUsername");
+            if (storedUser && storedUser === username) {
+                alert("Tên đăng nhập đã tồn tại!");
+                return;
+            }
+
+            localStorage.setItem("registeredUsername", username);
+            localStorage.setItem("registeredPassword", password);
+
+            alert("Đăng ký thành công");
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>
